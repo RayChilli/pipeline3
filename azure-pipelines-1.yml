@@ -10,10 +10,11 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
+
 - task: AzureFileCopy@4
   inputs:
     SourcePath: 'templates'
-    azureSubscription: 'script-connection'
+    azureSubscription: 'Documentation Testing 1(3a4176e0-58d3-4bb8-8cc2-9b8776777f27)'
     Destination: 'AzureBlob'
     storage: 'tfstore0930kr44qb6pkib7y'
     ContainerName: 'testcontainer'
