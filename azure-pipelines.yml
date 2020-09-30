@@ -16,4 +16,4 @@ steps:
     azureSubscription: 'script-connection'
     Destination: 'AzureBlob'
     storage: 'tfstore0930kr44qb6pkib7y'
-    ContainerName: 'templates'
+    ContainerName: 'testcontainer'
