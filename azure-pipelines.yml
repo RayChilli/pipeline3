@@ -12,7 +12,7 @@ pool:
 steps:
 - task: AzureFileCopy@4
   inputs:
-    SourcePath: 'templates'
+    SourcePath: './templates'
     azureSubscription: 'script-connection'
     Destination: 'AzureBlob'
     storage: 'tfstore0930kr44qb6pkib7y'
