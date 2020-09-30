@@ -17,3 +17,5 @@ steps:
     Destination: 'AzureBlob'
     storage: 'tfstore0930kr44qb6pkib7y'
     ContainerName: 'testcontainer'
+    sasTokenTimeOutInMinutes: '240'
+    
