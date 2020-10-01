@@ -22,5 +22,5 @@ steps:
   inputs:
     azureSubscription: 'script-connection'
     ScriptType: 'InlineScript'
-    Inline: 'Write-Output "hi $AzureFileCopy.StorageContainerUri"'
+    Inline: 'Write-Output "hi $(AzureFileCopy.StorageContainerUri)"'
     azurePowerShellVersion: 'LatestVersion'
