@@ -18,9 +18,15 @@ steps:
     storage: 'tfstore0930'
     ContainerName: 'abc'
   name: AzureFileCopy
-- task: AzurePowerShell@5
+- task: AzureResourceManagerTemplateDeployment@3
   inputs:
-    azureSubscription: 'script-connection'
-    ScriptType: 'InlineScript'
-    Inline: 'Write-Output "hi $(AzureFileCopy.StorageContainerUri)"'
-    azurePowerShellVersion: 'LatestVersion'
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'script-connection'
+    subscriptionId: '3a4176e0-58d3-4bb8-8cc2-9b8776777f27'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'newdeploy'
+    location: 'West US'
+    templateLocation: 'URL of the file'
+    csmFileLink: '$(AzureFileCopy.StorageContainerUri)mainTemplate.json$(AzureFileCopy.StorageContainerSasToken)'
+    deploymentMode: 'Incremental'
+    deploymentName: 'deploy1'
