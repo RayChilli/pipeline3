@@ -23,5 +23,5 @@ steps:
   inputs:
     azureSubscription: 'script-connection'
     ScriptType: 'InlineScript'
-    Inline: 'Write-Output $(artifactsLocation)'
+    Inline: 'Write-Output "$artifactsLocation"'
     azurePowerShellVersion: 'LatestVersion'
