@@ -17,11 +17,10 @@ steps:
     Destination: 'AzureBlob'
     storage: 'tfstore0930'
     ContainerName: 'abc'
-    outputStorageUri: 'artifactsLocation'
-    outputStorageContainerSasToken: 'artifactsLocationSasToken'
+  name: TemplateFileCopy
 - task: AzurePowerShell@5
   inputs:
     azureSubscription: 'script-connection'
     ScriptType: 'InlineScript'
-    Inline: 'Write-Output "hi $artifactsLocation"'
+    Inline: 'Write-Output "hi $AzureFileCopy.StorageContainerUri"'
     azurePowerShellVersion: 'LatestVersion'
