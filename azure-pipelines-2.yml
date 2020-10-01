@@ -17,7 +17,7 @@ steps:
     Destination: 'AzureBlob'
     storage: 'tfstore0930'
     ContainerName: 'abc'
-  name: TemplateFileCopy
+  name: AzureFileCopy
 - task: AzurePowerShell@5
   inputs:
     azureSubscription: 'script-connection'
