@@ -27,6 +27,6 @@ steps:
     resourceGroupName: 'newdeploy'
     location: 'West US'
     templateLocation: 'URL of the file'
-    csmFileLink: '$(AzureFileCopy.StorageContainerUri)mainTemplate.json$(AzureFileCopy.StorageContainerSasToken)'
+    csmFileLink: '$(AzureFileCopy.StorageContainerUri)templates/mainTemplate.json$(AzureFileCopy.StorageContainerSasToken)'
     deploymentMode: 'Incremental'
     deploymentName: 'deploy1'
