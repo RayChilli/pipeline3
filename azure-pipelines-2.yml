@@ -19,14 +19,9 @@ steps:
     ContainerName: 'abc'
     outputStorageUri: 'artifactsLocation'
     outputStorageContainerSasToken: 'artifactsLocationSasToken'
-- task: AzureResourceManagerTemplateDeployment@3
+- task: AzurePowerShell@5
   inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'script-connection'
-    subscriptionId: '3a4176e0-58d3-4bb8-8cc2-9b8776777f27'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: 'newrg'
-    location: 'West US 2'
-    templateLocation: 'URL of the file'
-    csmFileLink: '$(artifactsLocation)mainTemplate.json$(artifactsLocationSasToken)'
-    deploymentMode: 'Incremental'
+    azureSubscription: 'script-connection'
+    ScriptType: 'InlineScript'
+    Inline: 'Write-Output "hi"'
+    azurePowerShellVersion: 'LatestVersion'
